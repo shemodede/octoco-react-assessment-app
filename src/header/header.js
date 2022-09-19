@@ -7,7 +7,7 @@ function Header() {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#home" style={{color: 'white'}}>Home</Navbar.Brand>
+        <Navbar.Brand href="/" style={{color: 'white'}}>Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
     </Navbar>
