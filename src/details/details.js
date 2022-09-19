@@ -27,35 +27,35 @@ function Details() {
     return (
         <div style={{ padding: "50px" }}>
             <>
-            {
-                coinData ? (
-            <Container >
-                <Row>
-                    <Col style={{disply:'flex', justifyContent:'left', fontSize: '28px'}}><img src={coinData.image.small}></img>&nbsp;&nbsp;<strong>{coinData.name}</strong><span style={{disply:'flex', justifyContent:'left', fontSize: '28px', textTransform: 'uppercase'}}><strong>({coinData.symbol})</strong></span></Col>
-                </Row>
-                <Row >
-                    <div style={{ textJustify: 'auto', fontSize: '12px' }}>
-                    {Parser(coinData.description.en)}
-                    </div>
-                </Row>
-                <Row>
-                    <Col>
-                    <Table>
-                        <tbody>
-                    <tr><div><strong>Price:</strong>&nbsp;R {coinData.market_data.current_price.zar}</div></tr>
-                    <tr><div><strong>Market Cap:</strong>&nbsp;R {coinData.market_data.market_cap.zar}</div></tr>
-                    <tr><div><strong>Total Supply:</strong>&nbsp;R {coinData.market_data.total_supply}</div></tr>
-                    <tr><div><strong>Market Rank:</strong>&nbsp; {coinData.market_data.market_cap_rank}</div></tr>
-                    <tr><div><strong>Total Volume:</strong>&nbsp;R {coinData.market_data.total_volume.zar}</div></tr>
-                    </tbody>
-                    </Table>
-                    </Col>
-                    <Col></Col>
-                </Row>
-            </Container>
-            ) : <div>No data</div>
-        }
-        </>
+                {
+                    coinData ? (
+                        <Container >
+                            <Row>
+                                <Col style={{ disply: 'flex', justifyContent: 'left', fontSize: '28px' }}><img src={coinData.image.small}></img>&nbsp;&nbsp;<strong>{coinData.name}</strong><span style={{ disply: 'flex', justifyContent: 'left', fontSize: '28px', textTransform: 'uppercase' }}><strong>({coinData.symbol})</strong></span></Col>
+                            </Row>
+                            <Row style={{paddingTop: "12px"}}>
+                                <div style={{ textJustify: 'auto', fontSize: '12px' }}>
+                                    {Parser(coinData.description.en)}
+                                </div>
+                            </Row>
+                            <Row style={{paddingTop: "12px"}}>
+                                <Col>
+                                    <Table>
+                                        <tbody>
+                                            <tr><td><strong>Price:</strong></td><td>R {coinData.market_data.current_price.zar}</td></tr>
+                                            <tr><td><strong>Market Cap:</strong></td><td>R {coinData.market_data.market_cap.zar}</td></tr>
+                                            <tr><td><strong>Total Supply:</strong></td><td>R {coinData.market_data.total_supply}</td></tr>
+                                            <tr><td><strong>Market Rank:</strong></td><td>{coinData.market_data.market_cap_rank}</td></tr>
+                                            <tr><td><strong>Total Volume:</strong></td><td>R {coinData.market_data.total_volume.zar}</td></tr>
+                                        </tbody>
+                                    </Table>
+                                </Col>
+                                <Col></Col>
+                            </Row>
+                        </Container>
+                    ) : <div>No data</div>
+                }
+            </>
         </div>
     );
 }
